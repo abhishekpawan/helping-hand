@@ -1,0 +1,142 @@
+/* available food item section before login */
+
+.available-food-items {
+  text-align: center;
+}
+
+.available-food-items .food-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+.available-food-items .image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.available-food-items .details {
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+}
+
+@media (min-width: 760px) {
+  .available-food-items .details {
+    width: 73%;
+    margin-left: 10px;
+  }
+  
+}
+
+@media (max-width: 760px) {
+}
+
+
+.available-food-items .details .discriptions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.available-food-items .details .discriptions .food-discription {
+  background-color: rgb(231, 231, 231);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: start;
+  /* width: 65%; */
+}
+
+.available-food-items .details .discriptions .food-discription p#postedby {
+  /* font-size: 13px; */
+  color: rgb(168, 168, 168);
+}
+
+.available-food-items .details .discriptions .food-date {
+  background-color: rgb(231, 231, 231);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.available-food-items .details .discriptions .food-date .date-of-posting {
+  border-bottom: 1px solid gray;
+}
+
+.available-food-items .details .discriptions .food-date .due-date {
+  padding-top: 10px;
+}
+
+.available-food-items .details .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.available-food-items .details .buttons button.direction {
+  background-color: #219f94;
+  color: white;
+}
+
+.available-food-items .details .buttons button.direction:hover {
+  cursor: pointer;
+  font-size: larger;
+  background-color: #18746c;
+}
+
+.available-food-items .details .buttons button.select {
+  background-color: #f2f5c8;
+  color: black;
+}
+.available-food-items .details .buttons button.select:hover {
+  cursor: pointer;
+  font-size: larger;
+  background-color: #e8e8a6;
+}
+
+.available-food-items .details .buttons .food-status {
+  /* background: #; */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f5c8;
+}
+
+@media (max-width: 767px) {
+  .available-food-items .details {
+    padding: 5px 10px;
+  }
+
+  .available-food-items .details h4 {
+    font-size: 16px;
+  }
+  .available-food-items .details p {
+    font-size: 13px;
+  }
+  .available-food-items .details .discriptions .food-discription {
+    padding: 10px;
+  }
+
+  .available-food-items .details .discriptions .food-discription h3 {
+    font-size: 18px;
+  }
+  .available-food-items .details .discriptions .food-discription p {
+    font-size: 10px;
+  }
+
+  .available-food-items .details .discriptions .food-date .due-date p {
+    padding-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+/* available food item section before login */

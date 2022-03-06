@@ -1,0 +1,121 @@
+/* signup page */
+
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 20px;
+  padding: 30px 50px 30px 50px;
+  /* margin: 30px; */
+
+  position: absolute;
+  top: 120px;
+  width: 90%;
+  max-width: 700px;
+}
+
+.signup-page-inside {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-header {
+  text-align: center;
+  /* padding-bottom: 30px; */
+  text-transform: uppercase;
+}
+
+.signup-header p {
+  color: rgba(46, 46, 46, 0.644);
+}
+
+
+@media only screen and (min-width: 600px) {
+
+  .signup-area .switcher button {
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+#user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: #219f94;
+  color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+#user h4 {
+  margin-bottom: 30px;
+}
+
+#user img {
+  width: 300px;
+  /* width: 50%; */
+}
+
+#user .signin-img{
+  /* display: flex; */
+  display: flex;
+  justify-content: center;
+}
+
+#user .signup a{
+  text-decoration: none;
+  color: white;
+}
+.googlelogin {
+  width: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.googlelogin button {
+  height: 42px;
+  width:  200px;
+}
+
+.cancel-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button.cancel {
+  /* border: 0.5px solid black; */
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  background-color: #e8e8a6;
+  color: black;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.2s ease-in-out;
+}
+
+button.cancel:hover {
+  cursor: pointer;
+  font-size: larger;
+}
+
+/* signup page */
