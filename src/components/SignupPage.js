@@ -1,36 +1,49 @@
 import React from "react";
 import { useState } from "react";
 import GoogleLogin from "react-google-login";
+import { useCookies } from "react-cookie";
 import axios from "axios";
 
 import "./SignupPage.css";
 import signin from "../img/signin.png";
 
-
 const SignupPage = (props) => {
-  console.log(document)
+  const [cookies, setCookie] = useCookies(["user"]);
+  console.log(cookies)
 
   const handleFailure = (error) => {
     alert(error);
   };
 
-  const handleLogin = (googleData) => {
-    // console.log(googleData);
-    // console.log(document.cookie)
+  // succes login handle
 
-    axios({
-      method: 'POST',
-      url: 'http://a325-157-34-149-205.ngrok.io/google-register',
-      data: {
+  const handleLogin = async (googleData) => {
+    const config = {
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    };
+
+    const { data } = await axios.post(
+      "http://localhost:4000/google-register",
+      {
         token: googleData.tokenId,
-        imageURL: googleData.profileObj.imageUrl
-      }
-    }).then(response =>{
-      console.log(response.data)
-      console.log(response)
-      console.log(document.cookie)
-    })
+        imageURL: googleData.profileObj.imageUrl,
+      },
+      config
+    );
+
+    console.log(data);
+
+    // setting cookie
+    setCookie("Token", data.token, { path: "/" });
+    window.location.reload(false);
+
+  console.log(cookies)
+    
+
+    // console.log(document.cookie);
   };
+
   return (
     <React.Fragment>
       <div className={props.signupPageClass} id="signup-page">
