@@ -10,6 +10,7 @@ import "./FoodItems.css";
 const FoodItems = (props) => {
   const [selectedFoodItem, setSelectedFoodItem] = useState(true);
 
+
   const handleYourFood = () => {
     setSelectedFoodItem(false);
   };
@@ -56,7 +57,9 @@ const FoodItems = (props) => {
               }
             >
               {/* <div className="col-10 signup-page"> */}
-              <div className="row signup-page-inside food-items-box">
+              {props.cookieData.Token? (
+                <div>hgk</div>
+              ):(<div className="row signup-page-inside food-items-box">
                 <div className="col-12 signup-area">
                   <div className="" id="user">
                     <h4>You are not sign in yet.</h4>
@@ -77,6 +80,8 @@ const FoodItems = (props) => {
                   </div>
                 </div>
               </div>
+              )}
+              
 
               <div className="add-food food-items-box">
                 Add your food items</div>

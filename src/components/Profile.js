@@ -1,10 +1,15 @@
 import React from "react";
+import { useState } from "react";
+
 import dp from "../img/dp.jfif";
+import { Link } from "react-router-dom";
 
 import FoodItems from "./FoodItems";
 import "./Profile.css";
 
-const Profile = () => {
+const Profile = (props) => {
+
+
   return (
     <React.Fragment>
       <div className="body profile">
@@ -14,7 +19,7 @@ const Profile = () => {
               <h2>Helping Hand</h2>
             </div>
             <div className="col-3 login-signup ">
-              <button className="signup">back</button>
+              <button className="signup"><Link to="/">Back</Link></button>
             </div>
           </div>
         </div>
@@ -22,17 +27,18 @@ const Profile = () => {
           <div className="public-food-list">
             <div className="col-12 profile-page">
               <h3 className="mb-2">Your Profile</h3>
-              <img className="mb-3" src={dp} />
+              <img className="mb-3" 
+              src={props.cookieData.User.imageURL} />
 
               <table class="table table-striped">
                 <tbody>
                   <tr>
                     <td>Name: </td>
-                    <td>Jhon Doe</td>
+                    <td>{props.cookieData.User.name}</td>
                   </tr>
                   <tr>
                     <td>Email: </td>
-                    <td>jhondoe@email.com</td>
+                    <td>{props.cookieData.User.email}</td>
                   </tr>
                   <tr>
                     <td>Reward Points(RP):</td>
@@ -51,10 +57,10 @@ const Profile = () => {
                 </tbody>
               </table>
 
-              <div className="col-12 buttons mb-3">
-              <button className="signout">Sign Out</button>
+              {/* <div className="col-12 buttons mb-3">
+              <button className="signout" onClick={signout}><Link to='/'>Sign Out</Link></button>
 
-              </div>
+              </div> */}
             </div>
 
             <div className="col-12 selector">

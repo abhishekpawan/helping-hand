@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import GoogleLogin from "react-google-login";
 import { useCookies } from "react-cookie";
 import axios from "axios";
@@ -8,11 +8,11 @@ import "./SignupPage.css";
 import signin from "../img/signin.png";
 
 const SignupPage = (props) => {
-  const [cookies, setCookie] = useCookies(["user"]);
-  console.log(cookies)
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  
 
   const handleFailure = (error) => {
-    alert(error);
+    alert('Login Failed Please Try again');
   };
 
   // succes login handle
@@ -24,7 +24,7 @@ const SignupPage = (props) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:4000/google-register",
+      "/google-register",
       {
         token: googleData.tokenId,
         imageURL: googleData.profileObj.imageUrl,
@@ -32,17 +32,22 @@ const SignupPage = (props) => {
       config
     );
 
-    console.log(data);
 
     // setting cookie
     setCookie("Token", data.token, { path: "/" });
+    setCookie("User", data.user, { path: "/" });
     window.location.reload(false);
 
-  console.log(cookies)
-    
 
-    // console.log(document.cookie);
+    alert('Sign In Successfull')
+
   };
+
+  //removie 'User' cookie on signing out
+  removeCookie(props.removeCookie);
+
+  props.onCookie(cookies)
+
 
   return (
     <React.Fragment>
