@@ -27,6 +27,8 @@ const FoodItems = (props) => {
   const imageUploader = useRef(null);
 
   const handleImageUpload = (e) => {
+
+
     const [file] = e.target.files;
     if (file) {
       const reader = new FileReader();
@@ -38,6 +40,11 @@ const FoodItems = (props) => {
       reader.readAsDataURL(file);
     }
   };
+
+  
+
+
+
 
   //handling enetered data
   const [enteredFoodName, setEnteredFoodName] = useState("");
@@ -65,12 +72,17 @@ const FoodItems = (props) => {
     const foodData = {
       name: enteredFoodName,
       description: enteredFoodDis,
-      images: "https://cdn.vox-cdn.com/thumbor/DMXD2zLif49j6IP2i3Avda2Cyl0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg",
+      images: uploadedImage.current.file,
       type: foodType,
+      location:enteredFoodLocation,
+      id: cookies.User._id
     };
 
+    console.log(foodData);
     setEnteredFoodName("");
     setEnteredFoodDis("");
+    setEnteredFoodLocation("");
+    setFoodType(undefined)
     document.querySelector("#uploadedimg").value = null;
     document.getElementById("defimg").src = uploadimageplaceholder;
 
@@ -86,15 +98,18 @@ const FoodItems = (props) => {
             
             name: enteredFoodName,
             description: enteredFoodDis,
-            images: "https://cdn.vox-cdn.com/thumbor/DMXD2zLif49j6IP2i3Avda2Cyl0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg",
+            images: uploadedImage.current.file,
             type: foodType,
-            age:2,
             location:enteredFoodLocation,
             id: cookies.User._id
          
         },
         config
       );
+      
+        
+    
+      
   };
 
   // console.log(uploadedImage.current.src)
@@ -163,8 +178,8 @@ const FoodItems = (props) => {
                               required
                             />
                             <select
-                              className="form-select form-select-sm"
-                              aria-label=".form-select-sm example"
+                              // className="form-select form-select-sm"
+                              // aria-label=".form-select-sm example"
                               
                               onChange={foodTypeHandler}
                               required

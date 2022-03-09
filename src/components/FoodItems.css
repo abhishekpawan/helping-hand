@@ -137,6 +137,20 @@ button {
   letter-spacing: 1px;
   font-weight: 300;
 }
+#food-form .formBx form select {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
 
 #food-form .formBx .buttons{
   display: flex;
