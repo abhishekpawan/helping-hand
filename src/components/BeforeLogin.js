@@ -123,7 +123,7 @@ const Login = (props) => {
                           <span className="email">{cookies.User.email}</span>
                         </li>
                         <li>
-                          RP: 99
+                          RP: {cookies.User.rp}
                           <button className="reedem">Reedem</button>
                         </li>
 

@@ -43,7 +43,7 @@ const Profile = (props) => {
                   <tr>
                     <td>Reward Points(RP):</td>
                     <td>
-                      99 <button className="reedem">Reedem</button>
+                    {cookies.User.rp} <button className="reedem">Reedem</button>
                     </td>
                   </tr>
                   <tr>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useRef } from "react";
 import { useCookies } from "react-cookie";
+import axios from "axios";
 
 import PublicFoodItem from "./PublicFoodItem";
 import YourFoodItem from "./YourFoodItem";
@@ -41,6 +42,8 @@ const FoodItems = (props) => {
   //handling enetered data
   const [enteredFoodName, setEnteredFoodName] = useState("");
   const [enteredFoodDis, setEnteredFoodDis] = useState("");
+  const [enteredFoodLocation, setEnteredFoodLocation] = useState("");
+  const [foodType, setFoodType] = useState();
 
   const foodNameHandler = (e) => {
     setEnteredFoodName(e.target.value);
@@ -48,32 +51,62 @@ const FoodItems = (props) => {
   const foodDisHandler = (e) => {
     setEnteredFoodDis(e.target.value);
   };
+  const foodLocationHandler = (e) => {
+    setEnteredFoodLocation(e.target.value);
+  };
+  const foodTypeHandler = (e) => {
+    setFoodType(e.target.value);
+  };
 
   //form submit handler
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+
     const foodData = {
       name: enteredFoodName,
-      dis: enteredFoodDis,
-      img: uploadedImage,
-      date: new Date(),
+      description: enteredFoodDis,
+      images: "https://cdn.vox-cdn.com/thumbor/DMXD2zLif49j6IP2i3Avda2Cyl0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg",
+      type: foodType,
     };
 
     setEnteredFoodName("");
     setEnteredFoodDis("");
     document.querySelector("#uploadedimg").value = null;
-    document.getElementById("defimg").src=uploadimageplaceholder;
+    document.getElementById("defimg").src = uploadimageplaceholder;
 
+    //sending food data to backend
+      const config = {
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      };
 
-    console.log(foodData);
+      const { data } = await axios.post(
+        "/food/new",
+        {
+            
+            name: enteredFoodName,
+            description: enteredFoodDis,
+            images: "https://cdn.vox-cdn.com/thumbor/DMXD2zLif49j6IP2i3Avda2Cyl0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg",
+            type: foodType,
+            age:2,
+            location:enteredFoodLocation,
+            id: cookies.User._id
+         
+        },
+        config
+      );
   };
+
+  // console.log(uploadedImage.current.src)
 
   //form cancel handler
   const cancelHandler = () => {
     setEnteredFoodName("");
     setEnteredFoodDis("");
+    setEnteredFoodLocation("");
+    setFoodType(undefined)
     document.getElementById("uploadedimg").value = null;
-    document.getElementById("defimg").src=uploadimageplaceholder;
+    document.getElementById("defimg").src = uploadimageplaceholder;
   };
 
   return (
@@ -129,11 +162,29 @@ const FoodItems = (props) => {
                               onChange={foodNameHandler}
                               required
                             />
+                            <select
+                              className="form-select form-select-sm"
+                              aria-label=".form-select-sm example"
+                              
+                              onChange={foodTypeHandler}
+                              required
+                            >
+                              <option value="">Select Food Type</option>
+                              <option value="Dry">Dry</option>
+                              <option value="Gravy">Gravy</option>
+                            </select>
                             <textarea
                               type="text"
                               value={enteredFoodDis}
                               placeholder="Food Discription"
                               onChange={foodDisHandler}
+                              required
+                            />
+                            <input
+                              type="text"
+                              value={enteredFoodLocation}
+                              placeholder="Your Address"
+                              onChange={foodLocationHandler}
                               required
                             />
                             <div className="row col-12">
@@ -159,7 +210,7 @@ const FoodItems = (props) => {
                             </div>
                             <div className="image-holder">
                               <img
-                              id="defimg"
+                                id="defimg"
                                 src={uploadimageplaceholder}
                                 ref={uploadedImage}
                                 alt="uploaded_image"
@@ -219,7 +270,7 @@ const FoodItems = (props) => {
                         against world hunger. Either you just want to provide
                         the food or want to deliver the food or BOTH!
                       </p>
-                      <img src={notlogin} alt="notlogin"/>
+                      <img src={notlogin} alt="notlogin" />
                       {/* <h4>Sign in Here!</h4> */}
                       <div className="col-3 login-signup ">
                         <button className="signup" onClick={props.signupClick}>
