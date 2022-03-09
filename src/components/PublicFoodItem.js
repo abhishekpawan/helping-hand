@@ -13,9 +13,9 @@ const PublicFoodItem = (props) => {
             : "col-12 available-food-items"
         }
       >
-        <div className="col-12 food-items-box mb-4">
+        {/* <div className="col-12 food-items-box mb-4">
           <h4>No Food items available for donation!</h4>
-        </div>
+        </div> */}
         <div className="col-12 food-item food-items-box mb-4 ">
           <div className="col-3 image d-none d-md-block">
             <img src={dummyimg} />

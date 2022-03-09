@@ -1,4 +1,4 @@
-.show {
+.signup-page.show {
   visibility: visible;
   transition: 1s;
   opacity: 1;
@@ -29,10 +29,19 @@
 }
 
 .login-area-inside .title {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
+ display: flex;
+ /* height: 100px; */
+  
+
 }
+
+@media (max-width:600px) {
+  .login-area-inside .title img{
+    transform: scale(.7);
+}
+
+}
+
 
 .login-signup {
   display: flex;
@@ -74,6 +83,11 @@ button.signup {
   cursor: pointer;
   font-size: larger;
 }
+.username-dp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .username-dp .username {
   display: flex;
@@ -85,6 +99,7 @@ button.signup {
 .username-dp .dp .dp-wrapper {
   width: 50px;
   height: 50px;
+
 }
 
 .username-dp .dp .dp-wrapper img {
@@ -118,6 +133,7 @@ button.signup {
   display: inline-block;
   padding: 15px;
   position: relative;
+
 }
 .dp-wrapper .dd ul {
   /* display: none; */
@@ -132,6 +148,8 @@ button.signup {
 .dp-wrapper:hover ul {
   visibility: visible;
   opacity: 1;
+  min-width: 300px;
+
   transition: 0.5s;
   margin-top: 15px;
   width: auto;
@@ -140,7 +158,10 @@ button.signup {
   position: absolute;
   padding-left: 10px;
 }
-
+.dp-wrapper:hover ul li a{
+  text-decoration: none;
+  color: black;
+}
 .dp-wrapper .dd ul li:first-child {
   border-radius: 10px 10px 0px 0px;
   opacity: 0;
@@ -156,6 +177,9 @@ button.signup {
 
 .dp-wrapper .dd ul li:nth-child(3){
   font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .dp-wrapper .dd ul li:last-child {
   border-radius: 0px 0px 10px 10px;
@@ -168,12 +192,17 @@ button.signup {
 .dp-wrapper:hover ul li:hover{
   display: block;
   background-color: white;
-
 }
-.dp-wrapper:hover ul li:nth-child(7):hover,
-.dp-wrapper:hover ul li:nth-child(6):hover,r {
-  background-color: #e0e0e0;
+.dp-wrapper .dd ul li:nth-child(3):hover{
+  display: flex;
+}
+.dp-wrapper:hover ul li button:hover{
+  background-color: #219f94;
   cursor: pointer;
+  color: white;
+}
+.dp-wrapper:hover ul li button:hover a{
+  color: white;
 }
 
 .dp-wrapper .dd button.reedem {
@@ -195,22 +224,4 @@ button.signup {
   font-size: large;
 }
 
-.dp-wrapper .dd button.add-location {
-
-  align-items: center;
-  height: 40px;
-  width: 150px;
-  border-radius: 10px;
-  border: none;
-  background: none;
-  background-color: #e8e8a6;
-  color: black;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transition: all 0.2s ease-in-out;
-}
-
-.dp-wrapper .dd button.add-location:hover {
-  cursor: pointer;
-  font-size: larger;
-}
 

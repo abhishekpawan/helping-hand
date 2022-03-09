@@ -31,16 +31,31 @@
       margin-bottom: 30px;
   }
 
-  /* .profile .profile-page table tr td:first-child{
-      text-align: end;
+  .profile .login-signup .singup a{
+      text-decoration: none;
+      color: white;
+
   }
 
-  .profile .profile-page table tr td:first-child{
-    text-align: end;
-} */
-
+  /* .profile button.singup:hover{
+    background-color: #219f94;
+    cursor: pointer;
+    color: whte;
+  } */
+  .profile button.signup:hover a{
+    color: white;
+  }
 
   
+
+.profile .profile-page table tbody tr:last-child td:last-child{
+    color: #219f94;
+    width: 50%;
+}
+  
+
+
+
 .profile .profile-page button.reedem {
 
     align-items: center;
@@ -59,6 +74,10 @@
     cursor: pointer;
     font-size: large;
   }
+
+
+
+
   
   .profile .profile-page button.signout {
 
@@ -78,25 +97,4 @@
     cursor: pointer;
     font-size: larger;
   }
-  
-
-  .profile .profile-page button.add-location {
-
-    align-items: center;
-    height: 40px;
-    width: 150px;
-    border-radius: 10px;
-    border: none;
-    background: none;
-    background-color: #e8e8a6;
-    color: black;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .profile .profile-page button.add-location:hover {
-    cursor: pointer;
-    font-size: larger;
-  }
-  
   

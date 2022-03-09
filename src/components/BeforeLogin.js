@@ -1,18 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import dp from "../img/dp.jfif";
-
+import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 
 import SignupPage from "./SignupPage";
 import FoodItems from "./FoodItems";
-
+// import hhlogo from "../img/hhlogo.png"
+import hhlogogreen from "../img/hhlogogreen.png"
 import "./BeforeLogin.css";
 
 const Login = (props) => {
   const [signupClicked, setSignupClicked] = useState(false);
-  const [cookie, setCookie] = useState('') //our cookie data
-  const [removeCookie, setRemoveCookie]=useState("Token")
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
   //signup click handlers
   let signupPageClass = "col-10 signup-page";
@@ -42,56 +41,101 @@ const Login = (props) => {
     setSignupClicked(false);
   };
 
-  // getting cookie data from "signuppage.js"
-  const cookieData=(cookieData)=>{
-    setCookie(cookieData)
+
+  //loging out user by clearing all cookies
+  const signout = () => {
+    removeCookie("User");
+    removeCookie("Token");
+    removeCookie("G_AUTHUSER_H");
+    removeCookie("Location");
+    window.location.reload(false);
+  };
+
+  //getting location of user
+  const [address, setAddress] = useState();
+
+  //  const location = navigator.geolocation.getCurrentPosition(function(position) {
+  //   console.log("Latitude is :", position.coords.latitude);
+  //   console.log("Longitude is :", position.coords.longitude);
+  // });
+
+  // console.log(location)
+
+  var locationOptions = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+
+  function success(pos) {
+    var crd = pos.coords;
+
+    // console.log(crd);
+    // console.log('Your current position is:');
+    // console.log(`Latitude : ${crd.latitude}`);
+    // console.log(`Longitude: ${crd.longitude}`);
+    // console.log(`More or less ${crd.accuracy} meters.`);
+
+    // require('dotenv').config()
+
+    // const MAP_API = process.env.GOOGLE_MAP_API_KEY;
+
+    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=AIzaSyAsqOL3Md_68A2OfEsMJbSVWYNt5sPpoRI`;
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => setAddress(data.results[0].formatted_address));
+
+    setCookie("Location", address, { path: "/" });
   }
 
-  //sending cookie data to app.js
-  props.onCookie(cookie)
- 
- //loging out user bby clearing cookie.user
- const signout=()=>{
-   setRemoveCookie('User')
-   window.location.reload(false);
- }
+  function error(err) {
+    console.warn(
+      `ERROR(${err.code}): ${err.message}, Unable to retrieve your location`
+    );
+    // alert(`ERROR(${err.code}): ${err.message}`)
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, locationOptions);
 
   return (
     <React.Fragment>
       <div className="body">
         <div className={expandClass}>
-          <div className="col-12 login-area-inside">
-            <div className="col-9 title" id="title">
-              <h2>Helping Hand</h2>
+          <div className="row col-12 login-area-inside">
+            <div className="col-12 col-sm-9 title" id="title">
+           <h2><img src={hhlogogreen} alt="logo"/></h2> 
+
             </div>
-            {cookie.User ? (
-              <div className="row col-3 username-dp d-flex">
-                <div className="col-7 username">
-                  <h5>{cookie.User.name}</h5>
+            {cookies.User ? (
+              <div className="row col-12 col-sm-3 username-dp d-flex">
+                <div className="col-5 col-sm-7 username">
+                  <h5>{cookies.User.name}</h5>
                 </div>
                 <div className="col-1 dp">
                   <div className="dp-wrapper">
-                    <img src={cookie.User.imageURL} />
-                    <div class="dd">
+                    <img src={cookies.User.imageURL} alt="user_image" />
+                    <div className="dd">
                       <ul>
                         <li>Invisible option</li>
                         <li>
-                        {cookie.User.name}<br />
-                          <span className="email">{cookie.User.email}</span>
+                          {cookies.User.name}
+                          <br />
+                          <span className="email">{cookies.User.email}</span>
                         </li>
                         <li>
-                          RP: 99 <button className="reedem">Reedem</button>
+                          RP: 99
+                          <button className="reedem">Reedem</button>
                         </li>
-                        <li>Location: unknown</li>
+
                         <li>
-                          <button className="add-location">Add Location</button>
+                          <button>
+                            <Link to="/profile">View Profile</Link>
+                          </button>
                         </li>
                         <li>
-                          <Link to="/profile">View Profile</Link>
+                          {" "}
+                          <button onClick={signout}> Sign Out</button>
                         </li>
-                        <li> <button 
-                        onClick={signout}
-                        > Sign Out</button></li>
                       </ul>
                     </div>
                   </div>
@@ -109,17 +153,11 @@ const Login = (props) => {
           <SignupPage
             signupPageClass={signupPageClass}
             cancelClick={cancelClick}
-            onCookie={cookieData}
-            removeCookie={removeCookie}
-            
-            
           />
         </div>
 
-        <FoodItems 
-        signupClick={signupClick} 
-        cookieData={cookie}
-        />
+        <FoodItems signupClick={signupClick}
+         />
       </div>
     </React.Fragment>
   );

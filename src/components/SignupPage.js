@@ -43,11 +43,6 @@ const SignupPage = (props) => {
 
   };
 
-  //removie 'User' cookie on signing out
-  removeCookie(props.removeCookie);
-
-  props.onCookie(cookies)
-
 
   return (
     <React.Fragment>
@@ -65,7 +60,7 @@ const SignupPage = (props) => {
             <div className="" id="user">
               <div className="row col-12 signin-img">
                 <div className="col-6 d-none d-md-block">
-                  <img src={signin} />
+                  <img src={signin} alt="signin" />
                 </div>
 
                 <div className="col-6 googlelogin">

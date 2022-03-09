@@ -1,14 +1,13 @@
 import React from "react";
 import { useState } from "react";
-
-import dp from "../img/dp.jfif";
+import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 
 import FoodItems from "./FoodItems";
 import "./Profile.css";
 
 const Profile = (props) => {
-
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
   return (
     <React.Fragment>
@@ -19,7 +18,9 @@ const Profile = (props) => {
               <h2>Helping Hand</h2>
             </div>
             <div className="col-3 login-signup ">
-              <button className="signup"><Link to="/">Back</Link></button>
+              <button className="signup">
+                <Link to="/">Back</Link>
+              </button>
             </div>
           </div>
         </div>
@@ -27,18 +28,17 @@ const Profile = (props) => {
           <div className="public-food-list">
             <div className="col-12 profile-page">
               <h3 className="mb-2">Your Profile</h3>
-              <img className="mb-3" 
-              src={props.cookieData.User.imageURL} />
+              <img className="mb-3" src={cookies.User.imageURL} />
 
-              <table class="table table-striped">
+              <table className="table table-striped">
                 <tbody>
                   <tr>
                     <td>Name: </td>
-                    <td>{props.cookieData.User.name}</td>
+                    <td>{cookies.User.name}</td>
                   </tr>
                   <tr>
                     <td>Email: </td>
-                    <td>{props.cookieData.User.email}</td>
+                    <td>{cookies.User.email}</td>
                   </tr>
                   <tr>
                     <td>Reward Points(RP):</td>
@@ -47,13 +47,9 @@ const Profile = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <td>Location</td>
-                    <td>
-                    <button className="add-location">Add Location</button>
-
-                    </td>
+                    <td>Your Location:</td>
+                    <td>{cookies.Location}</td>
                   </tr>
-                  
                 </tbody>
               </table>
 
