@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 
 import SignupPage from "./SignupPage";
 import FoodItems from "./FoodItems";
-// import hhlogo from "../img/hhlogo.png"
 import hhlogogreen from "../img/hhlogogreen.png";
 import "./BeforeLogin.css";
 
 const Login = (props) => {
   const [signupClicked, setSignupClicked] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
 
   //signup click handlers
   let signupPageClass = "col-10 signup-page";
@@ -83,14 +83,16 @@ const Login = (props) => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results[0]);
         setAddress(data.results[0].formatted_address);
         setPlaceId(data.results[0].place_id);
       });
 
     setCookie("place_id", placeId, { path: "/" });
+
     setCookie("Location", address, { path: "/" });
   }
+  console.log(cookies);
+
 
   function error(err) {
     console.warn(

@@ -135,6 +135,7 @@ const FoodItems = (props) => {
       <PublicFoodItem
         selectedFoodItem={selectedFoodItem}
         publicFoodData={food}
+        place_id={cookies.place_id}
       />
     ));
   }

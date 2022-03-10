@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import dummyimg from "../img/dummyimg.jpg";
-import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
 
 import "./PublicFoodItem.css";
 
 const PublicFoodItem = (props) => {
-  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [destinationPlaceId, setDestinationPlaceId] = useState();
 
   // const navigate = useNavigate();
@@ -88,7 +84,7 @@ const PublicFoodItem = (props) => {
               </button>
               <a
                 target="_blank"
-                href={`https://www.google.com/maps/dir/?api=1&origin=QVB&origin_place_id=${cookies.place_id}&destination=QVB&destination_place_id=${destinationPlaceId}`}
+                href={`https://www.google.com/maps/dir/?api=1&origin=QVB&origin_place_id=${props.place_id}&destination=QVB&destination_place_id=${destinationPlaceId}`}
               >
                 <button
                   className="col-3 me-3 me-md-5 direction "
