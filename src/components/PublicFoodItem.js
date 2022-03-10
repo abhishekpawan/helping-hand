@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import dummyimg from "../img/dummyimg.jpg";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 import "./PublicFoodItem.css";
 
 const PublicFoodItem = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  const [destinationPlaceId, setDestinationPlaceId] = useState();
+
+  // const navigate = useNavigate();
+
+  const selectFoodHandler = (e) => {
+    alert("Food item selected");
+
+    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${props.publicFoodData.location}&key=AIzaSyAsqOL3Md_68A2OfEsMJbSVWYNt5sPpoRI`;
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setDestinationPlaceId(data.results[0].place_id);
+      });
+  };
 
   return (
     <React.Fragment>
@@ -21,17 +37,23 @@ const PublicFoodItem = (props) => {
         </div> */}
         <div className="col-12 food-item food-items-box mb-4 ">
           <div className="col-3 image d-none d-md-block">
-            <a className="lightbox" href={`#http://localhost:4000/${props.publicFoodData.images}`}>
-            <img
-              src={`http://localhost:4000/${props.publicFoodData.images}`}
-              alt="foodimage"
-            />
+            <a
+              className="lightbox"
+              href={`#http://localhost:4000/${props.publicFoodData.images}`}
+            >
+              <img
+                src={`http://localhost:4000/${props.publicFoodData.images}`}
+                alt="foodimage"
+              />
             </a>
-            <div className="lightbox-target" id={`http://localhost:4000/${props.publicFoodData.images}`}>
-            <img
-              src={`http://localhost:4000/${props.publicFoodData.images}`}
-              alt="foodimage"
-            />
+            <div
+              className="lightbox-target"
+              id={`http://localhost:4000/${props.publicFoodData.images}`}
+            >
+              <img
+                src={`http://localhost:4000/${props.publicFoodData.images}`}
+                alt="foodimage"
+              />
               <a className="lightbox-close" href="#"></a>
             </div>
           </div>
@@ -61,10 +83,20 @@ const PublicFoodItem = (props) => {
             </div>
 
             <div className="col-12 buttons">
-              <button className="col-3 me-3 select">Select</button>
-              <button className="col-3 me-3 me-md-5 direction ">
-                Get Direction
+              <button className="col-3 me-3 select" onClick={selectFoodHandler}>
+                Select
               </button>
+              <a
+                target="_blank"
+                href={`https://www.google.com/maps/dir/?api=1&origin=QVB&origin_place_id=${cookies.place_id}&destination=QVB&destination_place_id=${destinationPlaceId}`}
+              >
+                <button
+                  className="col-3 me-3 me-md-5 direction "
+                  // onClick={directionHandler}
+                >
+                  Get Direction
+                </button>
+              </a>
 
               <div className=" col-5 food-status">
                 Food is available for donation

@@ -3,14 +3,11 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 
-
 import SignupPage from "./SignupPage";
 import FoodItems from "./FoodItems";
 // import hhlogo from "../img/hhlogo.png"
 import hhlogogreen from "../img/hhlogogreen.png";
 import "./BeforeLogin.css";
-
-
 
 const Login = (props) => {
   const [signupClicked, setSignupClicked] = useState(false);
@@ -50,11 +47,14 @@ const Login = (props) => {
     removeCookie("Token");
     removeCookie("G_AUTHUSER_H");
     removeCookie("Location");
+    removeCookie("place_id");
+
     window.location.reload(false);
   };
 
   //getting location of user
   const [address, setAddress] = useState();
+  const [placeId, setPlaceId] = useState();
 
   //  const location = navigator.geolocation.getCurrentPosition(function(position) {
   //   console.log("Latitude is :", position.coords.latitude);
@@ -77,15 +77,18 @@ const Login = (props) => {
     // console.log(`Longitude: ${crd.longitude}`);
     // console.log(`More or less ${crd.accuracy} meters.`);
 
-    
+    const MAP_API = process.env.GOOGLE_MAP_API_KEY;
 
-    const MAP_API = window.env.GOOGLE_MAP_API_KEY;
-
-    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=${MAP_API}`;
+    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=AIzaSyAsqOL3Md_68A2OfEsMJbSVWYNt5sPpoRI`;
     fetch(apiUrl)
       .then((response) => response.json())
-      .then((data) => setAddress(data.results[0].formatted_address));
+      .then((data) => {
+        console.log(data.results[0]);
+        setAddress(data.results[0].formatted_address);
+        setPlaceId(data.results[0].place_id);
+      });
 
+    setCookie("place_id", placeId, { path: "/" });
     setCookie("Location", address, { path: "/" });
   }
 
