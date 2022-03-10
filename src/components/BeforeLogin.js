@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import SignupPage from "./SignupPage";
 import FoodItems from "./FoodItems";
 // import hhlogo from "../img/hhlogo.png"
-import hhlogogreen from "../img/hhlogogreen.png"
+import hhlogogreen from "../img/hhlogogreen.png";
 import "./BeforeLogin.css";
 
 const Login = (props) => {
@@ -40,7 +40,6 @@ const Login = (props) => {
   const cancelClick = () => {
     setSignupClicked(false);
   };
-
 
   //loging out user by clearing all cookies
   const signout = () => {
@@ -102,13 +101,12 @@ const Login = (props) => {
       <div className="body">
         <div className={expandClass}>
           <div className="row col-12 login-area-inside">
-            <div className="col-12 col-sm-9 title" id="title">
-           <h2><img src={hhlogogreen} alt="logo"/></h2> 
-
+            <div className="col-9 title" id="title">
+              <img src={hhlogogreen} alt="logo" />
             </div>
             {cookies.User ? (
-              <div className="row col-12 col-sm-3 username-dp d-flex">
-                <div className="col-5 col-sm-7 username">
+              <div className="row col-3 username-dp d-flex">
+                <div className="col-5 col-sm-7 username d-none d-md-block">
                   <h5>{cookies.User.name}</h5>
                 </div>
                 <div className="col-1 dp">
@@ -156,8 +154,7 @@ const Login = (props) => {
           />
         </div>
 
-        <FoodItems signupClick={signupClick}
-         />
+        <FoodItems signupClick={signupClick} />
       </div>
     </React.Fragment>
   );

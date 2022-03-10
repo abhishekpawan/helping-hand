@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useEffect } from "react";
+import { useState, useRef, } from "react";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 
@@ -25,9 +25,10 @@ const FoodItems = (props) => {
   //taking image from user in add food form
   const uploadedImage = useRef(null);
   const imageUploader = useRef(null);
+  const [image, setImage] = useState(null);
 
   const handleImageUpload = (e) => {
-
+    setImage(e.target.files[0]);
 
     const [file] = e.target.files;
     if (file) {
@@ -41,9 +42,23 @@ const FoodItems = (props) => {
     }
   };
 
-  
+  //getting all public food data
+  const [publicFoodData, setPublicFoodData] = useState([]);
+  const [yourFoodData, setYourFoodData] = useState([]);
 
+  useEffect(() => {
+    const foodData = axios.get("/foods").then((foodData)=>{
+      setPublicFoodData(foodData.data.foods);
+    })
 
+    //getting individualfood data
+    if(cookies.User){
+      const yourFoodData = axios.get(`/food/${cookies.User._id}`).then((foodData)=>{
+      setYourFoodData(foodData.data.userFood);
+    })
+    }
+    
+  }, [])
 
 
   //handling enetered data
@@ -69,60 +84,83 @@ const FoodItems = (props) => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const foodData = {
-      name: enteredFoodName,
-      description: enteredFoodDis,
-      images: uploadedImage.current.file,
-      type: foodType,
-      location:enteredFoodLocation,
-      id: cookies.User._id
-    };
+    const formData = new FormData();
 
-    console.log(foodData);
+    formData.append("name", enteredFoodName);
+    formData.append("description", enteredFoodDis);
+    formData.append("images", image, image.filename);
+    formData.append("type", foodType);
+    formData.append("location", enteredFoodLocation);
+    formData.append("id", cookies.User._id);
+
     setEnteredFoodName("");
     setEnteredFoodDis("");
     setEnteredFoodLocation("");
-    setFoodType(undefined)
-    document.querySelector("#uploadedimg").value = null;
+    setFoodType(undefined);
+    document.getElementById("uploadedimg").value = null;
     document.getElementById("defimg").src = uploadimageplaceholder;
 
-    //sending food data to backend
-      const config = {
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-      };
-
-      const { data } = await axios.post(
-        "/food/new",
-        {
-            
-            name: enteredFoodName,
-            description: enteredFoodDis,
-            images: uploadedImage.current.file,
-            type: foodType,
-            location:enteredFoodLocation,
-            id: cookies.User._id
-         
-        },
-        config
-      );
-      
-        
+    const { data } = await axios.post("/food/new", formData);
+    document.location.reload() 
     
-      
   };
+ 
 
-  // console.log(uploadedImage.current.src)
 
   //form cancel handler
   const cancelHandler = () => {
     setEnteredFoodName("");
     setEnteredFoodDis("");
     setEnteredFoodLocation("");
-    setFoodType(undefined)
+    setFoodType(undefined);
     document.getElementById("uploadedimg").value = null;
     document.getElementById("defimg").src = uploadimageplaceholder;
   };
+  
+  //output of public food data
+  let publicFoodItem = <div
+  className={
+    selectedFoodItem
+      ? "col-12 available-food-items selected"
+      : "col-12 available-food-items"
+  }
+>
+  <div className="col-12 food-items-box mb-4">
+    <h4>No Food items available for donation!</h4>
+  </div>
+  </div>
+  
+  if(publicFoodData.length>0){
+    publicFoodItem = publicFoodData.map((food) => (
+      <PublicFoodItem
+        selectedFoodItem={selectedFoodItem}
+        publicFoodData={food}
+      />
+    ));
+  }
+  
+
+  //output of individual food data
+  let yourFoodItem = <div
+  className={
+    selectedFoodItem
+      ? "col-12 available-food-items selected"
+      : "col-12 available-food-items"
+  }
+>
+  <div className="col-12 food-items-box mb-4">
+    <h4>No Food items available for donation!</h4>
+  </div>
+  </div>
+  
+  if(yourFoodData.length>0){
+    yourFoodItem = yourFoodData.map((food) => (
+      <YourFoodItem selectedFoodItem={selectedFoodItem} 
+      yourFoodData={food}/>
+    ));
+  }
+  
+
 
   return (
     <React.Fragment>
@@ -180,7 +218,7 @@ const FoodItems = (props) => {
                             <select
                               // className="form-select form-select-sm"
                               // aria-label=".form-select-sm example"
-                              
+
                               onChange={foodTypeHandler}
                               required
                             >
@@ -219,6 +257,7 @@ const FoodItems = (props) => {
                                   accept="image/*"
                                   onChange={handleImageUpload}
                                   ref={imageUploader}
+                                  // value={image}
                                   required
                                 />
                               </div>
@@ -270,9 +309,7 @@ const FoodItems = (props) => {
                       Add your food items
                     </button>
                   </div>
-
-                  <YourFoodItem selectedFoodItem={selectedFoodItem} />
-                  <YourFoodItem selectedFoodItem={selectedFoodItem} />
+                  {yourFoodItem}
                 </div>
               ) : (
                 <div className="row signup-page-inside food-items-box">
@@ -298,9 +335,7 @@ const FoodItems = (props) => {
               )}
             </div>
 
-            <PublicFoodItem selectedFoodItem={selectedFoodItem} />
-            <PublicFoodItem selectedFoodItem={selectedFoodItem} />
-            <PublicFoodItem selectedFoodItem={selectedFoodItem} />
+            {publicFoodItem}
           </div>
         </div>
       </div>

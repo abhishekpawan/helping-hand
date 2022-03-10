@@ -6,7 +6,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  background:#219f94;
+  background:#c1deae;
 }        
 
 .wrapperAlert {
@@ -20,12 +20,12 @@
 
 .topHalf {
   width: 450px;
-  color: white;
+  color: black;
   overflow: hidden;
   min-height: 470px;
   position: relative;
   padding: 40px 0;
-  background: #c1deae;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,12 +41,6 @@
   
 }
 
-.topHalf p {
-  margin-bottom: 30px;
-}
-svg {
-  fill: #019871;
-}
 .topHalf h1 {
   font-size: 2.25rem;
   display: block;

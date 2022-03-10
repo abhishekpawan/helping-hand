@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import  { Redirect } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import { useCookies } from "react-cookie";
 import axios from "axios";
@@ -9,13 +9,14 @@ import signin from "../img/signin.png";
 
 const SignupPage = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-  const [signinSuccess, setSigninSuccess] = useState(false)
+  const [signinSuccess, setSigninSuccess] = useState(false);
 
   const handleFailure = (error) => {
-    alert('Login Failed Please Try again');
+    alert("Login Failed Please Try again");
   };
 
-  // succes login handle
+  const navigate = useNavigate();
+  // succes login handle]
 
   const handleLogin = async (googleData) => {
     const config = {
@@ -32,28 +33,13 @@ const SignupPage = (props) => {
       config
     );
 
-
     // setting cookie
     setCookie("Token", data.token, { path: "/" });
     setCookie("User", data.user, { path: "/" });
-    // setSigninSuccess(true)
-    window.location.reload(false);
-
-    // if(signinSuccess){
-    //   setSigninSuccess(false)
-    // return <Redirect to='/success'  />
     
 
-    // }
-
-    alert('sigin success')
-    
-
-
-    
-
+    navigate("/success", { replace: true });
   };
-
 
   return (
     <React.Fragment>

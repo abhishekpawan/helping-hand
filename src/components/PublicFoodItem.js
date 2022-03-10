@@ -1,9 +1,12 @@
 import React from "react";
 import dummyimg from "../img/dummyimg.jpg";
+import { useCookies } from "react-cookie";
 
 import "./PublicFoodItem.css";
 
 const PublicFoodItem = (props) => {
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
   return (
     <React.Fragment>
       <div
@@ -18,31 +21,41 @@ const PublicFoodItem = (props) => {
         </div> */}
         <div className="col-12 food-item food-items-box mb-4 ">
           <div className="col-3 image d-none d-md-block">
-            <img src={dummyimg} />
+            <a className="lightbox" href={`#http://localhost:4000/${props.publicFoodData.images}`}>
+            <img
+              src={`http://localhost:4000/${props.publicFoodData.images}`}
+              alt="foodimage"
+            />
+            </a>
+            <div className="lightbox-target" id={`http://localhost:4000/${props.publicFoodData.images}`}>
+            <img
+              src={`http://localhost:4000/${props.publicFoodData.images}`}
+              alt="foodimage"
+            />
+              <a className="lightbox-close" href="#"></a>
+            </div>
           </div>
           <div className="col-12 col-md-9 details">
             <div className="row col-12 discriptions mb-3">
               <div className="col-12 col-md-7 mb-3 mb-md-0 food-discription">
-                <h3>Food Name</h3>
+                <h3>{props.publicFoodData.name}</h3>
                 <p id="postedby">
                   posted by <span>someone</span>
                 </p>
                 <p className="d-none d-md-block">
-                  Lorem ipsum dolor sit amet. Aut accusamus quia ab quia nihil
-                  aut omnis sint sit vero repudiandae in officia esse At nobis
-                  enim rem alias accusamus!{" "}
+                  {props.publicFoodData.description}
                 </p>
-                <h4>Location :</h4>
+                <h4>Location : {props.publicFoodData.location}</h4>
               </div>
               <div className="col-12 col-md-4 food-date">
                 <div className="col-12 date-of-posting">
                   <h4>Food Posted on:</h4>
-                  <p>28th Feb, 2022 12:45 PM</p>
+                  <p>{props.publicFoodData.createdAt}</p>
                 </div>
 
                 <div className="col-12 due-date">
                   <h4>Due Date of Delivering food:</h4>
-                  <p>29th Feb, 2022 12:44 PM</p>
+                  <p>{props.publicFoodData.createdAt}</p>
                 </div>
               </div>
             </div>

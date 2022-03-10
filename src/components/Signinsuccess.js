@@ -22,7 +22,7 @@ const Signinsuccess = () => {
               <h2>
                 Welcome <span>{cookies.User.name}</span>{" "}
               </h2>
-              <button className=""><Link to="/">ok</Link></button>
+              <Link to="/"><button className="">ok</button></Link>
               <ul className="bg-bubbles">
                 <li></li>
                 <li></li>
