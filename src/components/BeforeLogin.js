@@ -3,11 +3,14 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 
+
 import SignupPage from "./SignupPage";
 import FoodItems from "./FoodItems";
 // import hhlogo from "../img/hhlogo.png"
 import hhlogogreen from "../img/hhlogogreen.png";
 import "./BeforeLogin.css";
+
+
 
 const Login = (props) => {
   const [signupClicked, setSignupClicked] = useState(false);
@@ -65,7 +68,6 @@ const Login = (props) => {
     timeout: 5000,
     maximumAge: 0,
   };
-
   function success(pos) {
     var crd = pos.coords;
 
@@ -75,11 +77,11 @@ const Login = (props) => {
     // console.log(`Longitude: ${crd.longitude}`);
     // console.log(`More or less ${crd.accuracy} meters.`);
 
-    // require('dotenv').config()
+    
 
-    // const MAP_API = process.env.GOOGLE_MAP_API_KEY;
+    const MAP_API = window.env.GOOGLE_MAP_API_KEY;
 
-    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=AIzaSyAsqOL3Md_68A2OfEsMJbSVWYNt5sPpoRI`;
+    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=${MAP_API}`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setAddress(data.results[0].formatted_address));
