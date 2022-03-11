@@ -1,10 +1,11 @@
 .lower-body {
-  background-color: #c1deae;
+  /* background-color: #c1deae; */
   padding-right: 0;
 }
 
 .public-food-list {
-  background-color: white;
+  background-color: #002047;
+  color: white;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -50,8 +51,8 @@ button {
 }
 
 .selector button.selected {
-  background-color: #e8e8a6;
-  color: black;
+  background-color: #ed373a;
+  color: white;
 }
 
 .add-food {
@@ -67,15 +68,17 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  border-radius: 20px;
+  width: 200px;
+  height: 120px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: 0s;
   padding: 40px;
 }
 
-.add-food button i{
+.add-food button i {
   font-size: 34px;
-  color: #219F94;
+  color: #002047;
 }
 .add-food button:hover {
   cursor: pointer;
@@ -85,20 +88,18 @@ button {
 
 /* add food form section */
 
-#food-form .modal-dialog{
+#food-form .modal-dialog {
   max-width: 600px;
 }
-#food-form .modal-content{
+#food-form .modal-content {
   border-radius: 20px;
-
 }
 
-#food-form .modal-content .formBx{
+#food-form .modal-content .formBx {
   padding: 40px;
-
 }
 
-#food-form .formBx form h2{
+#food-form .formBx form h2 {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -152,40 +153,38 @@ button {
   font-weight: 300;
 }
 
-#food-form .formBx .buttons{
+#food-form .formBx .buttons {
   display: flex;
   justify-content: center;
 }
-#food-form .formBx form h4{
+#food-form .formBx form h4 {
   font-size: 20px;
 }
 
-#food-form .formBx form h4 span{
+#food-form .formBx form h4 span {
   font-size: large;
   color: #a1a1a1;
   font-weight: 400;
-
 }
 
-#food-form .formBx form .image-preview{
+#food-form .formBx form .image-preview {
   /* height: 200px; */
 }
 
-
-#food-form .formBx form .image-holder{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 300px;
+#food-form .formBx form .image-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
   /* width: 50%; */
-
 }
 
-
-#food-form .formBx form .image-holder img{
-height: 300px;
-width: auto;
-
+#food-form .formBx form .image-holder img {
+  height: 300px;
+  width: auto;
 }
-  
+
+#food-form .formBx form .cancel {
+  background-color: #ED373A;
+}

@@ -10,9 +10,6 @@
   padding: 2%;
   box-sizing: border-box;
 }
-.available-food-items .image{
-  
-}
 
 /* Styles the thumbnail */
 
@@ -22,58 +19,54 @@ a.lightbox img {
   box-shadow: 0px 0px 8px rgba(0,0,0,.3);
   margin: 94px 20px 20px 20px; */
 
-   
   width: 100%;
-  height: 100%;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  }
-  
-  /* Styles the lightbox, removes it from sight and adds the fade-in transition */
-  
-  .lightbox-target {
-    
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+.lightbox-target {
   position: fixed;
   top: -100%;
   width: 100%;
   left: 0px;
-  background: rgba(0,0,0,.7);
-  opacity: 0;
-  -webkit-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   overflow: hidden;
-   
-  }
-  
-  /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
-  
-  .lightbox-target img {
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+.lightbox-target img {
   margin: auto;
   position: absolute;
   top: 0;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   bottom: 0;
   max-height: 0%;
   max-width: 0%;
   border: 3px solid white;
-  box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-    
-  }
-  
-  /* Styles the close link, adds the slide down transition */
-  
-  a.lightbox-close {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.lightbox-close {
   display: block;
-  width:50px;
-  height:50px;
+  width: 50px;
+  height: 50px;
   box-sizing: border-box;
   background: white;
   color: black;
@@ -81,15 +74,15 @@ a.lightbox img {
   position: absolute;
   top: -80px;
   right: 0;
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  }
-  
-  /* Provides part of the "X" to eliminate an image from the close link */
-  
-  a.lightbox-close:before {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:before {
   content: "";
   display: block;
   height: 30px;
@@ -97,16 +90,16 @@ a.lightbox img {
   background: black;
   position: absolute;
   left: 26px;
-  top:10px;
-  -webkit-transform:rotate(45deg);
-  -moz-transform:rotate(45deg);
-  -o-transform:rotate(45deg);
-  transform:rotate(45deg);
-  }
-  
-  /* Provides part of the "X" to eliminate an image from the close link */
-  
-  a.lightbox-close:after {
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
   content: "";
   display: block;
   height: 30px;
@@ -114,34 +107,35 @@ a.lightbox img {
   background: black;
   position: absolute;
   left: 26px;
-  top:10px;
-  -webkit-transform:rotate(-45deg);
-  -moz-transform:rotate(-45deg);
-  -o-transform:rotate(-45deg);
-  transform:rotate(-45deg);
-  }
-  
-  /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
-  
-  .lightbox-target:target {
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+.lightbox-target:target {
   opacity: 1;
   top: 0;
   bottom: 0;
-    overflow:scroll;
-  }
-  
-  .lightbox-target:target img {
+  overflow: scroll;
+}
+
+.lightbox-target:target img {
   max-height: 100%;
   max-width: 100%;
-  }
-  
-  .lightbox-target:target a.lightbox-close {
+}
+
+.lightbox-target:target a.lightbox-close {
   top: 0;
-  }
+}
 
 .available-food-items .details {
   background: white;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: black;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -154,12 +148,10 @@ a.lightbox img {
     width: 73%;
     margin-left: 10px;
   }
-  
 }
 
 @media (max-width: 760px) {
 }
-
 
 .available-food-items .details .discriptions {
   display: flex;
@@ -174,7 +166,7 @@ a.lightbox img {
   /* width: 65%; */
 }
 
-.available-food-items .details .discriptions .food-discription h4{
+.available-food-items .details .discriptions .food-discription h4 {
   font-size: 20px;
 }
 
@@ -197,11 +189,11 @@ a.lightbox img {
   border-bottom: 1px solid gray;
 }
 
-.available-food-items .details .discriptions .food-date h4{
+.available-food-items .details .discriptions .food-date h4 {
   font-size: 16px;
 }
 
-.available-food-items .details .discriptions .food-date p{
+.available-food-items .details .discriptions .food-date p {
   font-size: 12px;
 }
 
@@ -214,9 +206,10 @@ a.lightbox img {
   justify-content: space-between;
 }
 
-.available-food-items .details .buttons button.direction {
-  background-color: #219f94;
+.available-food-items .details .buttons a button.direction {
+  background-color: #002047;
   color: white;
+  width: 200px;
 }
 
 .available-food-items .details .buttons button.direction:hover {
@@ -232,7 +225,7 @@ a.lightbox img {
 .available-food-items .details .buttons button.select:hover {
   cursor: pointer;
   font-size: larger;
-  background-color: #e8e8a6;
+  background-color: white;
 }
 
 .available-food-items .details .buttons .food-status {

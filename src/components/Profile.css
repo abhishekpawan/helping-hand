@@ -1,100 +1,97 @@
+.profile .public-food-list {
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  border-radius: 50px 50px 0px 0px;
+  background-color: white;
+  height: 100vh;
+  padding-top: 25px;
+  -webkit-box-shadow: 0px -10px 15px rgba(38, 57, 77, 0.534);
+  -moz-box-shadow: 0px -10px 15px rgba(38, 57, 77, 0.534);
+  box-shadow: 0px -10px 15px rgba(38, 57, 77, 0.534);
+  margin: 0 10px 0 10px;
 
-  .public-food-list {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    border-radius: 50px 50px 0px 0px;
-    padding-top: 25px;
-    -webkit-box-shadow: 0px -10px 15px rgba(38, 57, 77, 0.534);
-    -moz-box-shadow: 0px -10px 15px rgba(38, 57, 77, 0.534);
-    box-shadow: 0px -10px 15px rgba(38, 57, 77, 0.534);
-    margin: 0 10px 0 10px;
-  
-    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
-  }
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+}
 
-  .profile .profile-page{
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-  .profile .profile-page img{
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-  }
-  .profile .profile-page table{
-      margin-bottom: 30px;
-  }
+.profile .profile-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile .profile-page img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.profile .profile-page table {
+  margin-bottom: 30px;
+}
 
-  .profile .login-signup .singup a{
-      text-decoration: none;
-      color: white;
+.profile .login-signup button {
+  background-color: #002047;
+}
 
-  }
+.profile .signup a {
+  text-decoration: none;
+  color: white;
+}
 
-  /* .profile button.singup:hover{
-    background-color: #219f94;
+/* .profile .login-signup .singup a {
+  text-decoration: none;
+  color: white;
+} */
+
+/* .profile button.singup:hover{
+    background-color: #002047;
     cursor: pointer;
     color: whte;
   } */
-  .profile button.signup:hover a{
-    color: white;
-  }
-
-  
-
-.profile .profile-page table tbody tr:last-child td:last-child{
-    color: #219f94;
-    width: 50%;
+.profile button.signup:hover a {
+  color: white;
 }
-  
 
-
+.profile .profile-page table tbody tr:last-child td:last-child {
+  color: #002047;
+  width: 50%;
+}
 
 .profile .profile-page button.reedem {
+  align-items: center;
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  background-color: #002047;
+  color: white;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+  transition: all 0.2s ease-in-out;
+}
 
-    align-items: center;
-    height: 30px;
-    width: 80px;
-    border-radius: 10px;
-    border: none;
-    background: none;
-    background-color: #219f94;
-    color: white;
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .profile .profile-page button.reedem:hover {
-    cursor: pointer;
-    font-size: large;
-  }
+.profile .profile-page button.reedem:hover {
+  cursor: pointer;
+  font-size: large;
+}
 
+.profile .profile-page button.signout {
+  align-items: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  background-color: #002047;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.2s ease-in-out;
+}
 
-
-
-  
-  .profile .profile-page button.signout {
-
-    align-items: center;
-    height: 40px;
-    width: 150px;
-    border-radius: 10px;
-    border: none;
-    background: none;
-    background-color: #219f94;
-    color: white;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .profile .profile-page button.signout:hover {
-    cursor: pointer;
-    font-size: larger;
-  }
-  
+.profile .profile-page button.signout:hover {
+  cursor: pointer;
+  font-size: larger;
+}

@@ -1,8 +1,7 @@
 import React from "react";
 import { useCookies } from "react-cookie";
-import tickverified from "../img/tickverified.gif"
+import tickverified from "../img/tickverified.gif";
 import { Link } from "react-router-dom";
-
 
 import "./Signinsuccess.css";
 
@@ -16,25 +15,15 @@ const Signinsuccess = () => {
           <div className="contentAlert">
             <div className="topHalf">
               <div className="successgif">
-                  <img src={tickverified} alt="successimg"></img>
-                  </div>
+                <img src={tickverified} alt="successimg"></img>
+              </div>
               <h1>Sign Successfull!</h1>
               <h2>
                 Welcome <span>{cookies.User.name}</span>{" "}
               </h2>
-              <Link to="/"><button className="">ok</button></Link>
-              <ul className="bg-bubbles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+              <Link to="/">
+                <button className="">ok</button>
+              </Link>
             </div>
           </div>
         </div>

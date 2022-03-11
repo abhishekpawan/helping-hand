@@ -35,7 +35,7 @@ const PublicFoodItem = (props) => {
           <div className="col-3 image d-none d-md-block">
             <a
               className="lightbox"
-              href={`#http://localhost:4000/${props.publicFoodData.images}`}
+              href={`#http://localhost:1000/${props.publicFoodData.images}`}
             >
               <img
                 src={`http://localhost:4000/${props.publicFoodData.images}`}
@@ -44,7 +44,7 @@ const PublicFoodItem = (props) => {
             </a>
             <div
               className="lightbox-target"
-              id={`http://localhost:4000/${props.publicFoodData.images}`}
+              id={`http://localhost:1000/${props.publicFoodData.images}`}
             >
               <img
                 src={`http://localhost:4000/${props.publicFoodData.images}`}
