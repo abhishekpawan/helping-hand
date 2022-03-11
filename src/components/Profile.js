@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
+import logo from "../img/logoImage.png";
 
 import FoodItems from "./FoodItems";
 import "./Profile.css";
@@ -15,7 +16,7 @@ const Profile = (props) => {
         <div className="login-area">
           <div className="col-12 login-area-inside">
             <div className="col-9 title" id="title">
-              <h2>Helping Hand</h2>
+              <img src={logo} alt="logo" width={"350px"} />
             </div>
             <div className="col-3 login-signup ">
               <button className="signup">
@@ -43,7 +44,8 @@ const Profile = (props) => {
                   <tr>
                     <td>Reward Points(RP):</td>
                     <td>
-                    {cookies.User.rp} <button className="reedem">Reedem</button>
+                      {cookies.User.rp}{" "}
+                      <button className="reedem">Reedem</button>
                     </td>
                   </tr>
                   <tr>

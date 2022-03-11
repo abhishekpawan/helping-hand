@@ -12,7 +12,7 @@
 }
 
 .login-area {
-  background-color: #c1deae;
+  /* background-color: #c1deae; */
   display: flex;
   flex-direction: column;
 
@@ -23,8 +23,7 @@
 
 .login-area-inside {
   display: flex;
-  justify-content: start;
-
+  justify-content: flex-end;
   padding: 40px 20px 40px 40px;
 }
 
@@ -71,7 +70,7 @@ button.signup {
 }
 
 button.signup {
-  background-color: #219f94;
+  background-color: #002047;
   color: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.2s ease-in-out;
@@ -83,15 +82,18 @@ button.signup {
 }
 .username-dp {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .username-dp .username {
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  margin-right: 20px;
+}
+
+.username-dp .username span {
+  font-size: 16px;
 }
 
 .username-dp .dp .dp-wrapper {
@@ -102,13 +104,13 @@ button.signup {
 .username-dp .dp .dp-wrapper img {
   width: 100%;
   border-radius: 50%;
-  border: 3px solid #219f94;
+  border: 3px solid #002047;
   transition: 0.5s;
 }
 
 .username-dp .dp .dp-wrapper img:hover {
   cursor: pointer;
-  color: #219f94;
+  color: #002047;
   opacity: 0.7;
 }
 
@@ -193,7 +195,7 @@ button.signup {
   display: flex;
 }
 .dp-wrapper:hover ul li button:hover {
-  background-color: #219f94;
+  background-color: #002047;
   cursor: pointer;
   color: white;
 }
@@ -208,7 +210,7 @@ button.signup {
   border-radius: 10px;
   border: none;
   background: none;
-  background-color: #219f94;
+  background-color: #002047;
   color: white;
   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
   transition: all 0.2s ease-in-out;

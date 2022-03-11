@@ -300,7 +300,7 @@ const FoodItems = (props) => {
                     </div>
                   </div>
 
-                  <div className="add-food food-items-box">
+                  <div className="add-food">
                     <button
                       type="button"
                       data-bs-toggle="modal"

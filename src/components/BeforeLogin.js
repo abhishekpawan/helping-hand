@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 
 import SignupPage from "./SignupPage";
 import FoodItems from "./FoodItems";
-import hhlogogreen from "../img/hhlogogreen.png";
+import logo from "../img/logoImage.png";
 import "./BeforeLogin.css";
 
 const Login = (props) => {
   const [signupClicked, setSignupClicked] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-
 
   //signup click handlers
   let signupPageClass = "col-10 signup-page";
@@ -93,7 +92,6 @@ const Login = (props) => {
   }
   console.log(cookies);
 
-
   function error(err) {
     console.warn(
       `ERROR(${err.code}): ${err.message}, Unable to retrieve your location`
@@ -109,14 +107,15 @@ const Login = (props) => {
         <div className={expandClass}>
           <div className="row col-12 login-area-inside">
             <div className="col-9 title" id="title">
-              <img src={hhlogogreen} alt="logo" />
+              <img src={logo} alt="logo" width={"350px"} />
             </div>
             {cookies.User ? (
               <div className="row col-3 username-dp d-flex">
-                <div className="col-5 col-sm-7 username d-none d-md-block">
+                <div className="col-8 username d-none d-md-flex">
+                  <span>Welcome,</span>
                   <h5>{cookies.User.name}</h5>
                 </div>
-                <div className="col-1 dp">
+                <div className="col-3 dp">
                   <div className="dp-wrapper">
                     <img src={cookies.User.imageURL} alt="user_image" />
                     <div className="dd">
