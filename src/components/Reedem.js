@@ -235,7 +235,7 @@ const Profile = (props) => {
                         {" "}
                         <span class="amount">Claim with RP: 10000</span>{" "}
                       </ins>
-                      <span class="sale-tag sale-tag-square">-16%</span>
+                      {/* <span class="sale-tag sale-tag-square">-16%</span> */}
                     </span>
                   </a>
                   <a

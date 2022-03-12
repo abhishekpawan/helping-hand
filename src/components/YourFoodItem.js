@@ -90,7 +90,7 @@ const YourFoodItem = (props) => {
                 <h3>{props.yourFoodData.name}</h3>
 
                 <p id="postedby">
-                  posted by <span>someone</span>
+                  {/* posted by <span>someone</span> */}
                 </p>
                 <p className="d-none d-md-block">
                   {props.yourFoodData.description}

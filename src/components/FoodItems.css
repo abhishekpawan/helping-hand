@@ -188,3 +188,7 @@ button {
 #food-form .formBx form .cancel {
   background-color: #ED373A;
 }
+
+#food-form .formBx form h4{
+  color: #333;
+}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
+
 
 import "./PublicFoodItem.css";
 const { REACT_APP_GOOGLE_MAP_API_KEY } = process.env;
@@ -83,7 +85,7 @@ const PublicFoodItem = (props) => {
               <div className="col-12 col-md-7 mb-3 mb-md-0 food-discription">
                 <h3>{props.publicFoodData.name}</h3>
                 <p id="postedby">
-                  posted by <span>someone</span>
+                  {/* posted by <span>someone</span> */}
                 </p>
                 <p className="d-none d-md-block">
                   {props.publicFoodData.description}

@@ -78,6 +78,11 @@
   cursor: pointer;
   font-size: large;
 }
+.profile .profile-page button.reedem a{
+  text-decoration: none;
+  color: white;
+}
+
 
 .profile .profile-page button.signout {
   align-items: center;

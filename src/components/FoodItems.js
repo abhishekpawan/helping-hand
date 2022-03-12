@@ -12,7 +12,7 @@ import "./FoodItems.css";
 
 const FoodItems = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-  const [selectedFoodItem, setSelectedFoodItem] = useState(true);
+  const [selectedFoodItem, setSelectedFoodItem] = useState(false);
 
   //function to toggle between your food and public food
   const handleYourFood = () => {

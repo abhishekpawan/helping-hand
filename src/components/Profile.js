@@ -45,7 +45,9 @@ const Profile = (props) => {
                     <td>Reward Points(RP):</td>
                     <td>
                       {cookies.User.rp}{" "}
-                      <button className="reedem">Reedem</button>
+                      <button className="reedem">
+                        <Link to="/reedem">Reedem</Link>
+                      </button>
                     </td>
                   </tr>
                   <tr>
