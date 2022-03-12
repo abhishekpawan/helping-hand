@@ -24,6 +24,7 @@ a.lightbox img {
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   filter: brightness(30%);
+  object-fit: cover;
 }
 
 /* Styles the lightbox, removes it from sight and adds the fade-in transition */
@@ -226,9 +227,25 @@ a.lightbox-close:after {
   font-size: larger;
   background-color: #002047;
 }
+.available-food-items .details .buttons a button.direction.disabled {
+  background-color: #0020478c;
+  color: white;
+  width: 200px;
+}
+
+.available-food-items .details .buttons a button.direction.disabled:hover {
+  /* cursor: pointer; */
+  font-size: 16px;
+}
+
+
 
 .available-food-items .details .buttons button.select {
   background-color: #002047;
+  color: white;
+}
+.available-food-items .details .buttons button.select.selected {
+  background-color: #ED373A;
   color: white;
 }
 .available-food-items .details .buttons button.select:hover {
@@ -244,6 +261,12 @@ a.lightbox-close:after {
   align-items: center;
   justify-content: center;
   background-color: #29c129;
+  color: white;
+}
+
+.available-food-items .details .buttons button.delete {
+  background-color: #ED373A;
+  color: white;
 }
 
 @media (max-width: 767px) {

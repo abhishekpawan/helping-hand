@@ -8,6 +8,8 @@ import FoodItems from "./FoodItems";
 import logo from "../img/logoImage.png";
 import "./BeforeLogin.css";
 
+const { REACT_APP_GOOGLE_MAP_API_KEY } = process.env;
+
 const Login = (props) => {
   const [signupClicked, setSignupClicked] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -55,30 +57,16 @@ const Login = (props) => {
   const [address, setAddress] = useState();
   const [placeId, setPlaceId] = useState();
 
-  //  const location = navigator.geolocation.getCurrentPosition(function(position) {
-  //   console.log("Latitude is :", position.coords.latitude);
-  //   console.log("Longitude is :", position.coords.longitude);
-  // });
-
-  // console.log(location)
-
   var locationOptions = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0,
   };
+
   function success(pos) {
     var crd = pos.coords;
 
-    // console.log(crd);
-    // console.log('Your current position is:');
-    // console.log(`Latitude : ${crd.latitude}`);
-    // console.log(`Longitude: ${crd.longitude}`);
-    // console.log(`More or less ${crd.accuracy} meters.`);
-
-    const MAP_API = process.env.GOOGLE_MAP_API_KEY;
-
-    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=AIzaSyAsqOL3Md_68A2OfEsMJbSVWYNt5sPpoRI`;
+    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=${REACT_APP_GOOGLE_MAP_API_KEY}`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -90,7 +78,6 @@ const Login = (props) => {
 
     setCookie("Location", address, { path: "/" });
   }
-  console.log(cookies);
 
   function error(err) {
     console.warn(
