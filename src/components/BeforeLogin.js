@@ -115,7 +115,7 @@ const Login = (props) => {
                         </li>
                         <li>
                           RP: {cookies.User.rp}
-                          <button className="reedem">Reedem</button>
+                          <button className="reedem"><Link to="/reedem">Reedem</Link></button>
                         </li>
 
                         <li>

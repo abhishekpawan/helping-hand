@@ -216,6 +216,11 @@ button.signup {
   transition: all 0.2s ease-in-out;
 }
 
+.dp-wrapper .dd button.reedem a{
+  color: white;
+
+}
+
 .dp-wrapper .dd button.reedem:hover {
   cursor: pointer;
   font-size: large;

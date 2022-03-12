@@ -59,9 +59,9 @@ const YourFoodItem = (props) => {
             >
               <img
                 src={`http://localhost:4000/${props.yourFoodData.images}`}
-                alt="foodimage++"
+                alt="foodimage"
               />
-              <p
+              {/* <p
                 style={{
                   position: "absolute",
                   top: "0px",
@@ -71,7 +71,7 @@ const YourFoodItem = (props) => {
                 }}
               >
                 Click to preview image.
-              </p>
+              </p> */}
             </a>
             <div
               className="lightbox-target"
