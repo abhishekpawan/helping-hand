@@ -30,7 +30,7 @@ const Profile = (props) => {
           <div className="public-food-list">
             <div className="col-12 profile-page">
               <img className="mb-3" src={cookies.User.imageURL} />
-              <h1>Reedem with your Reward Points(RP)</h1>
+              <h2>Reedem Items with your Reward Points(RP)</h2>
               <h5>Available Reward Points: {cookies.User.rp}</h5>
             </div>
             <div className="m-3">
