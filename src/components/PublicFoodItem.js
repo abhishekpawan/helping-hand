@@ -4,10 +4,12 @@ import "./PublicFoodItem.css";
 
 const PublicFoodItem = (props) => {
   const [destinationPlaceId, setDestinationPlaceId] = useState();
+  const [isSelected, setIsSelected] = useState(false);
 
   // const navigate = useNavigate();
 
   const selectFoodHandler = (e) => {
+    setIsSelected(!isSelected);
     alert("Food item selected");
 
     const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${props.publicFoodData.location}&key=AIzaSyAsqOL3Md_68A2OfEsMJbSVWYNt5sPpoRI`;
@@ -36,11 +38,23 @@ const PublicFoodItem = (props) => {
             <a
               className="lightbox"
               href={`#http://localhost:1000/${props.publicFoodData.images}`}
+              style={{ position: "relative", textDecoration: "none" }}
             >
               <img
                 src={`http://localhost:4000/${props.publicFoodData.images}`}
                 alt="foodimage"
               />
+              <p
+                style={{
+                  position: "absolute",
+                  top: "0px",
+                  left: "80px",
+                  textDecoration: "none",
+                  color: "white",
+                }}
+              >
+                Click to preview image.
+              </p>
             </a>
             <div
               className="lightbox-target"
@@ -79,8 +93,11 @@ const PublicFoodItem = (props) => {
             </div>
 
             <div className="col-12 buttons">
-              <button className="col-3 me-3 select" onClick={selectFoodHandler}>
-                Select
+              <button
+                className={"col-3 me-3 select"}
+                onClick={selectFoodHandler}
+              >
+                {isSelected ? "Selected" : "Select"}
               </button>
               <a
                 target="_blank"

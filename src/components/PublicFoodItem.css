@@ -23,6 +23,7 @@ a.lightbox img {
   height: 300px;
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  filter: brightness(30%);
 }
 
 /* Styles the lightbox, removes it from sight and adds the fade-in transition */
@@ -132,6 +133,14 @@ a.lightbox-close:after {
   top: 0;
 }
 
+/* .available-food-items .food-item .cover {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  filter: brightness(50%)
+} */
+
 .available-food-items .details {
   background: white;
   color: black;
@@ -215,17 +224,16 @@ a.lightbox-close:after {
 .available-food-items .details .buttons button.direction:hover {
   cursor: pointer;
   font-size: larger;
-  background-color: #18746c;
+  background-color: #002047;
 }
 
 .available-food-items .details .buttons button.select {
-  background-color: #f2f5c8;
-  color: black;
+  background-color: #002047;
+  color: white;
 }
 .available-food-items .details .buttons button.select:hover {
   cursor: pointer;
   font-size: larger;
-  background-color: white;
 }
 
 .available-food-items .details .buttons .food-status {
@@ -235,7 +243,7 @@ a.lightbox-close:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2f5c8;
+  background-color: #29c129;
 }
 
 @media (max-width: 767px) {
