@@ -117,7 +117,7 @@ npm start
 ## Installing Back-end of the Project
 *NOTE: THIS IS ONLY THE FRONT-END PART OF THE PROJECT*
 
-*SEE BACK-END HERE: [helping-hand-backend (github.com)](https://github.com/abhishekpawan/helping-hand-backend)*
+*SEE BACK-END HERE: [helping-hand-backend (akshat-kumar2109)](https://github.com/akshat-kumar2109/helping-hand-backend)*
 
 
 <!-- CONTRIBUTING -->
