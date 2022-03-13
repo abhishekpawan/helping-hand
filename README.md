@@ -1,70 +1,168 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  
 
-## Available Scripts
+<!-- PROJECT LOGO -->
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+<div align="center">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img src="https://github.com/abhishekpawan/helping-hand/blob/main/src/img/hhfrontendtitlelogo.png" alt="hhfrontendtitlelogo" width="75%">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3 align="center">Helping Hand</h3>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+View Demo | <a  href="https://github.com/abhishekpawan/A-Collaborative-WhiteBoard/issues">Report Bug</a>
+</p>
 
-### `npm run eject`
+</div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  
+  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  
+  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- ABOUT THE PROJECT -->
 
-## Learn More
+# About The Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="https://github.com/abhishekpawan/helping-hand/blob/main/src/img/helpinghandmockup.png" alt="helpinghandmockup" width="75%">
 
-### Code Splitting
+Current estimates are that nearly [690 million people](http://www.fao.org/3/ca9692en/online/ca9692en.html#chapter-1_1) are hungry, or 8.9 percent of the world population. Over 20 crore Indians go to sleep empty-stomach every day. Also, According to a UN report which said that household food waste  in India is estimate to 50 kg per capita per year, or 68.7 million tonnes a year.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+THis project 'Helping Hand' provide a solution which will help in solve these two major problems simultaneously. Every household in the world will always have some leftover food. And most of these ends up in garbage the next day. This project providing a platform to list these food items. So, instead of wasting the food, It can be provided to the people who needs it most i.e. the people living on streets and are starving everyday. By this eventually we can move towards the goal of 'ZERO HUNGER', also reducing food wastage at the same time.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  
+### Features of this Project
+-  User can add their remaining/leftover food items. User's food will be added to his list as well as the list which is available publicly for all the users.
+- User can select his/her desire items for delivering it, and get direction from his/her current location to the food's location.
+- User's current location will be automatically picked after user's approval.
+- It also has a reward system, for every successful food listing, user will get 10 reward points or RP and for every successful food delivery user will get 30 points.
+- In the redeem section, user can claim different available products with his reward points. This will work as a motivation for user to list or deliver as much food as possible. 
 
-### Making a Progressive Web App
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🏗️: Built With
 
-### Advanced Configuration
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Google Maps API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  
+  
 
-### Deployment
+<!-- GETTING STARTED -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Getting Started
 
-### `npm run build` fails to minify
+First, You need to get a `GOOGLE MAPS API KEY` and a  `GOOGLE CLIENT ID`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`GOOGLE CLIENT ID` will be used for google login and `GOOGLE MAPS API KEY` will be used for working with google maps.
+
+Get your `GOOGLE CLIENT ID` from https://console.cloud.google.com/
+&
+Get your `GOOGLE MAPS API KEY` from https://developers.google.com/
+
+Now, create a `.env` file in the source of your project and add the two environment variables as given below
+
+```
+React_APP_GOOGLE_CLIENT_ID = [YOUR GOOGLE CLIENT ID]
+
+REACT_APP_GOOGLE_MAP_API_KEY = [YOUR GOOGLE MAPS API KEY]
+```
+  
+
+## Installing Front-end of the Project
+
+
+### Clone the repo
+```
+git clone https://github.com/abhishekpawan/helping-hand
+```
+### [](https://github.com/abhishekpawan/weather-forecast-web-app#to-install-all-the-dependencies)To Install all the dependencies
+
+```
+npm install
+```
+
+### Start the Server
+
+
+```
+npm start
+```
+#### Runs the app in the development mode.
+#### Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### The page will reload when you make changes.  
+#### You may also see any lint errors in the console.
+
+
+## Installing Back-end of the Project
+*NOTE: THIS IS ONLY THE FRONT-END PART OF THE PROJECT*
+
+*SEE BACK-END HERE: [helping-hand-backend (github.com)](https://github.com/abhishekpawan/helping-hand-backend)*
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+  
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+  
+
+1. Fork the Project
+
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+
+5. Open a Pull Request
+
+  
+  
+
+<!-- LICENSE -->
+
+## License
+
+  
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+  
+
+<!-- CONTACT -->
+
+## Contact
+
+  
+
+##### Check my portfolio: [abhishekpawan.me](https://abhishekpawan.me) 😁
+
+##### LinkedIn: [Abhishek Pawan](https://linkedin.com/in/abhishekpawan)
+
+##### Twitter: [@non_altruistic](https://twitter.com/non_altruistic)
+
+##### Mail: abhishekpawan297@gmail.com
+
+  
+
+### Made with my love of development ❤
