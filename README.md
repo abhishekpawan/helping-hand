@@ -36,10 +36,11 @@ View Demo | <a  href="https://github.com/abhishekpawan/A-Collaborative-WhiteBoar
 
 # About The Project
 
+<div align="center">
   
-
 <img src="https://github.com/abhishekpawan/helping-hand/blob/main/src/img/helpinghandmockup.png" alt="helpinghandmockup" width="75%">
 
+</div>
 Current estimates are that nearly [690 million people](http://www.fao.org/3/ca9692en/online/ca9692en.html#chapter-1_1) are hungry, or 8.9 percent of the world population. Over 20 crore Indians go to sleep empty-stomach every day. Also, According to a UN report which said that household food waste  in India is estimate to 50 kg per capita per year, or 68.7 million tonnes a year.
 
 THis project 'Helping Hand' provide a solution which will help in solve these two major problems simultaneously. Every household in the world will always have some leftover food. And most of these ends up in garbage the next day. This project providing a platform to list these food items. So, instead of wasting the food, It can be provided to the people who needs it most i.e. the people living on streets and are starving everyday. By this eventually we can move towards the goal of 'ZERO HUNGER', also reducing food wastage at the same time.
