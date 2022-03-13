@@ -19,7 +19,7 @@
   
 
 <p align="center">
-View Demo | <a  href="https://github.com/abhishekpawan/A-Collaborative-WhiteBoard/issues">Report Bug</a>
+View Demo | <a  href="https://github.com/abhishekpawan/helping-hand/issues">Report Bug</a>
 </p>
 
 </div>
