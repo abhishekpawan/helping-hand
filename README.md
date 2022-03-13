@@ -64,6 +64,8 @@ This project 'Helping Hand' provide a solution which will help in solve these tw
 - Express.js
 - MongoDB
 - Google Maps API
+- Google Direction API
+- Google Geocoding API
 
   
   
