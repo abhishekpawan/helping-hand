@@ -11,15 +11,17 @@
 <img src="https://github.com/abhishekpawan/helping-hand/blob/main/src/img/hhfrontendtitlelogo.png" alt="hhfrontendtitlelogo" width="75%">
 
 
-
+  <h2>WON <br>🏆"Best Hack Built Using APIs"🏆 <br>
+    in the <a href="https://devfolio.co/submissions/helping-hand-1b8c">Devcation'22 Hack'n'solve Hackathon</a></h2>
+  
+  <br>
   
 
-<h3 align="center">Helping Hand</h3>
 
   
 
 <p align="center">
-View Demo | <a  href="https://github.com/abhishekpawan/helping-hand/issues">Report Bug</a>
+  Live Demo | <a  href="https://github.com/abhishekpawan/helping-hand/issues">Report Bug | <a href="https://youtu.be/zpQ4mxOdT7k">Video Demo</a></a>
 </p>
 
 </div>
