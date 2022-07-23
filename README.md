@@ -21,7 +21,7 @@
   
 
 <p align="center">
-  Live Demo | <a  href="https://github.com/abhishekpawan/helping-hand/issues">Report Bug | <a href="https://youtu.be/zpQ4mxOdT7k">Video Demo</a></a>
+  <a href="https://beamish-rugelach-73d8cc.netlify.app">Try It</a> | <a  href="https://github.com/abhishekpawan/helping-hand/issues">Report Bug | <a href="https://youtu.be/zpQ4mxOdT7k">Video Demo</a></a>
 </p>
 
 </div>
