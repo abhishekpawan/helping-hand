@@ -47,13 +47,13 @@ const FoodItems = (props) => {
   const [yourFoodData, setYourFoodData] = useState([]);
 
   useEffect(() => {
-    const foodData = axios.get("/foods").then((foodData)=>{
+    const foodData = axios.get("https://sour-rainbow-ocean.glitch.me/foods").then((foodData)=>{
       setPublicFoodData(foodData.data.foods);
     })
 
     //getting individualfood data
     if(cookies.User){
-      const yourFoodData = axios.get(`/food/${cookies.User._id}`).then((foodData)=>{
+      const yourFoodData = axios.get(`https://sour-rainbow-ocean.glitch.me/food/${cookies.User._id}`).then((foodData)=>{
       setYourFoodData(foodData.data.userFood);
     })
     }
@@ -100,7 +100,7 @@ const FoodItems = (props) => {
     document.getElementById("uploadedimg").value = null;
     document.getElementById("defimg").src = uploadimageplaceholder;
 
-    const { data } = await axios.post("/food/new", formData);
+    const { data } = await axios.post("https://sour-rainbow-ocean.glitch.me/food/new", formData);
     document.location.reload() 
     
   };

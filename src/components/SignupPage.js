@@ -25,7 +25,7 @@ const SignupPage = (props) => {
     };
 
     const { data } = await axios.post(
-      "/google-register",
+      "https://sour-rainbow-ocean.glitch.me/google-register",
       {
         token: googleData.tokenId,
         imageURL: googleData.profileObj.imageUrl,

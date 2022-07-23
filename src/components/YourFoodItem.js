@@ -55,10 +55,10 @@ const YourFoodItem = (props) => {
           <div className="col-3 image d-none d-md-block">
             <a
               className="lightbox"
-              href={`#http://localhost:4000/${props.yourFoodData.images}`}
+              href={`#https://sour-rainbow-ocean.glitch.me/${props.yourFoodData.images}`}
             >
               <img
-                src={`http://localhost:4000/${props.yourFoodData.images}`}
+                src={`https://sour-rainbow-ocean.glitch.me/${props.yourFoodData.images}`}
                 alt="foodimage"
               />
               {/* <p
@@ -75,10 +75,10 @@ const YourFoodItem = (props) => {
             </a>
             <div
               className="lightbox-target"
-              id={`http://localhost:4000/${props.yourFoodData.images}`}
+              id={`https://sour-rainbow-ocean.glitch.me/${props.yourFoodData.images}`}
             >
               <img
-                src={`http://localhost:4000/${props.yourFoodData.images}`}
+                src={`https://sour-rainbow-ocean.glitch.me/${props.yourFoodData.images}`}
                 alt="foodimage"
               />
               <a className="lightbox-close" href="#"></a>

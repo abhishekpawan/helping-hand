@@ -54,7 +54,7 @@ const PublicFoodItem = (props) => {
               style={{ position: "relative", textDecoration: "none" }}
             >
               <img
-                src={`http://localhost:4000/${props.publicFoodData.images}`}
+                src={`https://sour-rainbow-ocean.glitch.me/${props.publicFoodData.images}`}
                 alt="foodimage"
               />
               <p
@@ -74,7 +74,7 @@ const PublicFoodItem = (props) => {
               id={`http://localhost:1000/${props.publicFoodData.images}`}
             >
               <img
-                src={`http://localhost:4000/${props.publicFoodData.images}`}
+                src={`https://sour-rainbow-ocean.glitch.me/${props.publicFoodData.images}`}
                 alt="foodimage"
               />
               <a className="lightbox-close" href="#"></a>
