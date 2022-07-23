@@ -12,6 +12,7 @@ const SignupPage = (props) => {
   const [signinSuccess, setSigninSuccess] = useState(false);
 
   const handleFailure = (error) => {
+    console.log(error);
     alert("Login Failed Please Try again");
   };
 
